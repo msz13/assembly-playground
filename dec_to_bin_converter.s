@@ -22,10 +22,10 @@ loop:
           mov       ebx, 48     ; set 0 character
           mov       edx, 49     ; set 1 character
           dec       ecx
-          shr       eax, 1      ; divide varable by 2 by shift left position
+          shr       eax, 1      ; divide varable by 2 by shift right one position
           cmovc     ebx, edx      ; set character to "1" if carry (if reminder of division)
           mov       [message+ecx], bl  ; set character in message 
-          cmp       eax, 0
+          cmp       eax, 0              ;loop if varable > 0
           jnz       loop 
 
          
